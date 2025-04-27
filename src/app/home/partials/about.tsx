@@ -6,7 +6,7 @@ import DecorationBox from '@/components/ui/decoration-box';
 const AboutMe = () => {
   return (
     <section className='custom-container relative py-10 md:py-30' id='about'>
-      <DecorationBox className='absolute bottom-0 left-0 z-100 h-[4.3rem] w-[6.45rem] rotate-90 md:bottom-0 md:h-[5.75rem] md:w-[8.625rem]' />
+      <DecorationBox className='absolute bottom-0 left-0 z-10 h-[4.3rem] w-[6.45rem] rotate-90 md:bottom-0 md:h-[5.75rem] md:w-[8.625rem]' />
       <div className='text-center'>
         <p className='md:text-lg-medium text-md-medium text-primary-200'>
           ABOUT ME

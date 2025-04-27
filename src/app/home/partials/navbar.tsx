@@ -33,7 +33,7 @@ const Navbar = () => {
         background,
         backdropFilter: backdropBlur,
       }}
-      className='fixed z-150 w-full'
+      className='fixed z-30 w-full'
     >
       <div className='custom-container flex-between h-20'>
         <div className='flex-start relative flex gap-2'>
@@ -69,7 +69,7 @@ const Navbar = () => {
             <div className='flex flex-col pl-4'>
               <div className='flex-start relative flex h-20 gap-2'>
                 <div className='bg-base-white inset-x-0 h-0.25 w-10'></div>
-                <p className='text-primary-200 text-md-bold'>Yana</p>
+                <p className='text-primary-200 text-md-bold'>Yana Supriatna</p>
               </div>
 
               <nav className='mt-4'>

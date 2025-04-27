@@ -14,7 +14,7 @@ const Hero = () => {
       <DecorationBox className='absolute bottom-[16%] left-0 z-100 h-[4.3rem] w-[6.45rem] md:bottom-0 md:h-[5.75rem] md:w-[8.625rem]' />
       {/* kiri */}
       <div
-        className='z-50 flex-[5.9] basis-110 md:p-0'
+        className='z-20 flex-[5.9] basis-110 md:p-0'
         style={{
           width: 'clamp(22.5rem, 64.66vw, 50.4375rem)',
           marginTop: 'clamp(7.5rem, 17.71vw, 13.81rem)',
@@ -45,6 +45,7 @@ const Hero = () => {
         <p
           className='text-lg-medium md:text-xl-medium mt-4 text-neutral-400'
           style={{
+            width: 'clamp(20.00rem, 47.83vw, 37.31rem)',
             fontSize: 'clamp(1.125rem, 1.60256vw, 1.25rem)',
             lineHeight: 'clamp(2rem, 2.724vw, 2.125rem)',
           }}

@@ -25,7 +25,7 @@ const HeroProfile = () => {
 
       {/* client rating */}
       <div
-        className='bg-base-black absolute bottom-1 left-1/2 z-30 h-34.5 w-full -translate-x-[50%] rounded-2xl border border-neutral-800 p-4 md:bottom-[9.6%] md:h-44.5 md:w-79 md:rounded-3xl md:p-5'
+        className='bg-base-black absolute bottom-1 left-1/2 z-10 h-34.5 w-full -translate-x-[50%] rounded-2xl border border-neutral-800 p-4 md:bottom-[9.6%] md:h-44.5 md:w-79 md:rounded-3xl md:p-5'
         style={{
           width: 'clamp(19.75rem,27.96vw,21.81rem',
         }}
