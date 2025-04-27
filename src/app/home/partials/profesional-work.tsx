@@ -39,7 +39,7 @@ const ProfesionalWorkCard: React.FC<ProfesionalWorkCardProps> = ({
   children,
 }) => {
   return (
-    <div className='mt-6 grid grid-cols-[2.5rem_auto] gap-x-4 gap-y-4 md:mt-16 md:gap-x-16 md:gap-y-0 lg:grid-cols-[auto_3rem_auto]'>
+    <div className='mt-6 grid grid-cols-[2.5rem_auto] gap-x-4 max-lg:gap-y-4 md:mt-16 md:gap-x-16 lg:grid-cols-[auto_3rem_auto] lg:gap-y-0'>
       <>{children}</>
     </div>
   );
@@ -119,14 +119,14 @@ const LineAndCircle: React.FC<{ index: number }> = ({ index }) => {
   return (
     <div
       className={cn(
-        'group relative mb-4 last:mb-0 md:mb-8 [&:nth-last-child(2)]:mb-0',
+        'group relative mb-0 md:mb-8 [&:nth-last-child(2)]:mb-0',
         // target child
         '[&:nth-last-child(2)>.line-decoration]:h-1/2',
         '[&:nth-last-child(11)>.line-decoration]:top-1/2 [&:nth-last-child(11)>.line-decoration]:h-[calc(50%+2rem)]'
       )}
     >
       {/* line decoration */}
-      <div className='line-decoration absolute left-1/2 h-[calc(100%+1rem)] w-0.25 -translate-x-1/2 bg-neutral-800 group-first:top-1/2 md:h-[calc(100%+2rem)]' />
+      <div className='line-decoration absolute left-1/2 h-[calc(100%+1rem)] w-0.25 -translate-x-1/2 bg-neutral-800 group-first:top-1/2 md:h-[calc(100%+3rem)] lg:h-[calc(100%+2rem)]' />
 
       {/* index circle */}
       <span className='flex-center bg-base-black text-primary-200 md:text-md-bold text-sm-bold absolute inset-x-0 top-1/2 aspect-square -translate-y-1/2 rounded-full border border-neutral-800'>
