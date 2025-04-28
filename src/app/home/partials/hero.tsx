@@ -11,7 +11,7 @@ const Hero = () => {
       className='custom-container relative flex flex-wrap md:h-218'
       id='home'
     >
-      <DecorationBox className='absolute bottom-[16%] left-0 z-100 h-[4.3rem] w-[6.45rem] md:bottom-0 md:h-[5.75rem] md:w-[8.625rem]' />
+      <DecorationBox className='absolute bottom-[16%] left-0 z-10 h-[4.3rem] w-[6.45rem] md:bottom-0 md:h-[5.75rem] md:w-[8.625rem]' />
       {/* kiri */}
       <div
         className='z-20 flex-[5.9] basis-110 md:p-0'
