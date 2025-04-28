@@ -42,7 +42,7 @@ const Experiences = () => {
         </div>
       </div>
       <div className='flex-center mt-10 md:mt-12'>
-        <Button className='w-full md:w-fit'>
+        <Button asChild className='w-full md:w-fit'>
           <Link
             className='text-sm-bold md:text-md-bold text-neutral-950'
             href='#contact'

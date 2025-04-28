@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className='flex-start relative flex gap-2'>
           <div className='bg-base-white inset-x-0 h-0.25 w-10'></div>
           <p className='text-primary-200 text-md-bold md:text-xl-bold'>
-            Yana Supriatna
+            <Link href='#home'>Yana Supriatna</Link>
           </p>
         </div>
         <nav className='hidden lg:block'>
@@ -75,7 +75,11 @@ const Navbar = () => {
             <div className='flex flex-col pl-4'>
               <div className='flex-start relative flex h-20 gap-2'>
                 <div className='bg-base-white inset-x-0 h-0.25 w-10'></div>
-                <p className='text-primary-200 text-md-bold'>Yana Supriatna</p>
+                <p className='text-primary-200 text-md-bold'>
+                  <SheetClose asChild>
+                    <Link href='#home'>Yana Supriatna</Link>
+                  </SheetClose>
+                </p>
               </div>
 
               <nav className='mt-4'>

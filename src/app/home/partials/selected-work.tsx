@@ -14,7 +14,10 @@ const SelectedWork = () => {
     <Section title='PORTFOLIO' subtitle='SELECTED WORK' id='projects'>
       <div className='mx-auto mt-6 flex flex-wrap gap-8 md:mt-16 md:gap-12'>
         {chunkedData.map((group, groupIndex) => (
-          <div key={groupIndex} className='flex flex-wrap gap-8 md:gap-5'>
+          <div
+            key={groupIndex}
+            className='flex flex-wrap gap-8 md:flex-1 md:gap-5'
+          >
             {group.map((item, itemIndex) => (
               <PortfolioItem key={itemIndex} {...item} />
             ))}
@@ -41,7 +44,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
   url,
 }) => {
   return (
-    <div className='relative flex-1 basis-90'>
+    <div className='relative flex-1 basis-80'>
       {url && (
         <div className='bg-neutral-25 flex-center absolute top-[52%] left-1/2 size-20 translate-x-[38%] rounded-full p-2 md:size-25'>
           <Link

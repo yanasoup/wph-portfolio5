@@ -84,7 +84,7 @@ const ContactForm = () => {
 
   return (
     <section className='custom-container relative z-15 flex flex-wrap md:mt-20'>
-      <DecorationBox className='absolute top-0 left-0 z-10 h-[4.3rem] w-[6.45rem] -translate-y-[150%] rotate-180 md:h-[5.75rem] md:w-[8.625rem] md:-translate-y-[100%]' />
+      <DecorationBox className='absolute top-0 left-0 z-10 h-[4.3rem] w-[6.45rem] -translate-y-[50%] rotate-180 md:h-[5.75rem] md:w-[8.625rem] md:-translate-y-[100%]' />
 
       <div className='flex-[1.8] basis-90 max-md:mb-10'>
         <div

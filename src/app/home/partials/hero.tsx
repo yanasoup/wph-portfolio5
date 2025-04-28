@@ -8,7 +8,7 @@ import HeroProfile from '@/components/ui/hero-profile';
 const Hero = () => {
   return (
     <section
-      className='custom-container relative flex flex-wrap md:h-218'
+      className='custom-container relative flex flex-wrap lg:h-218'
       id='home'
     >
       <DecorationBox className='absolute bottom-[16%] left-0 z-10 h-[4.3rem] w-[6.45rem] md:bottom-0 md:h-[5.75rem] md:w-[8.625rem]' />
@@ -53,7 +53,7 @@ const Hero = () => {
           Bridging creativity and functionality to deliver stunning,
           user-friendly web applications
         </p>
-        <Button className='mt-10 w-full md:mt-15 md:w-fit md:px-29'>
+        <Button asChild className='mt-10 w-full md:mt-15 md:w-fit md:px-29'>
           <Link
             className='text-sm-bold md:text-md-bold text-neutral-950'
             href='#contact'

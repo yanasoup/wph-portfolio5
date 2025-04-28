@@ -50,7 +50,7 @@ const AboutMe = () => {
           <h2 className='md:display-2xl-extrabold display-md-extrabold text-neutral-25 mx-auto mt-2'>
             CRAFTING SEAMLESS
           </h2>
-          <h2 className='md:display-2xl-extrabold display-md-extrabold text-neutral-25 mx-auto mt-2 md:w-218'>
+          <h2 className='md:display-2xl-extrabold display-md-extrabold text-neutral-25 mx-auto mt-2 lg:w-218'>
             <span className='text-primary-200'>HIGH-PERFORMANCE WEB</span>{' '}
             EXPERIENCES
           </h2>

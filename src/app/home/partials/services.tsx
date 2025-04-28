@@ -5,8 +5,8 @@ import { serviceData } from '@/constants/services-data';
 const Services = () => {
   return (
     <section className='custom-container py-10 md:py-30'>
-      <div className='flex flex-wrap items-center justify-between gap-4 md:gap-46'>
-        <div className='flex-[5.1] basis-90'>
+      <div className='flex flex-wrap items-center justify-between gap-4 lg:gap-46'>
+        <div className='flex-[5.1] basis-80'>
           <p className='md:text-lg-medium text-md-medium text-primary-200'>
             SERVICE
           </p>
@@ -15,7 +15,7 @@ const Services = () => {
           </h2>
         </div>
         <p
-          className='md:text-xl-medium text-md-medium flex-[4.9] basis-90 text-neutral-400 md:text-right'
+          className='md:text-xl-medium text-md-medium flex-[4.9] basis-80 text-neutral-400 md:text-right'
           style={{
             width: 'clamp(22.5625rem, 40.3846vw, 31.5rem)',
           }}

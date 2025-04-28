@@ -18,7 +18,7 @@ const ProfesionalWork = () => {
       subtitle='PROFESIONAL WORK'
       className='relative'
     >
-      <DecorationBox className='absolute right-0 bottom-0 z-10 h-[4.3rem] w-[6.45rem] translate-y-[80%] -rotate-90 md:h-[5.75rem] md:w-[8.625rem] md:-translate-y-[23px]' />
+      <DecorationBox className='absolute right-0 bottom-0 z-10 h-[4.3rem] w-[6.45rem] translate-y-[80%] -rotate-90 md:h-[5.75rem] md:w-[8.625rem]' />
       <ProfesionalWorkCard>
         {profesionalWorkData.map((work) => {
           const atrr = { isLargeIsh: isLargeIsh, ...work };
