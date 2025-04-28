@@ -47,7 +47,7 @@ const FormStatusDialog: React.FC<FormStatusDialogProps> = ({
               : 'Please try again later or check your internet connection.'}
           </DialogDescription>
           <DialogClose asChild>
-            <Button className='mx-auto mt-6 max-w-90.25 text-sm font-bold text-neutral-950'>
+            <Button className='mx-auto mt-6 max-w-90.25 shrink-0 text-sm font-bold text-neutral-950'>
               {loading ? 'Loading...' : 'BACK TO HOME'}
             </Button>
           </DialogClose>

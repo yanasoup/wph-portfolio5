@@ -9,6 +9,8 @@ import {
   SheetTrigger,
   SheetContent,
   SheetClose,
+  SheetHeader,
+  SheetDescription,
 } from '@/components/ui/sheet';
 
 import { navigationData } from '@/constants/navigation-data';
@@ -66,6 +68,10 @@ const Navbar = () => {
             />
           </SheetTrigger>
           <SheetContent>
+            <SheetHeader>
+              <SheetDescription className='sr-only'>Menu</SheetDescription>
+            </SheetHeader>
+
             <div className='flex flex-col pl-4'>
               <div className='flex-start relative flex h-20 gap-2'>
                 <div className='bg-base-white inset-x-0 h-0.25 w-10'></div>

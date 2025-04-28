@@ -13,7 +13,8 @@ const HeroProfile = () => {
         height: 'clamp(29.13rem, 70.63vw, 55.06rem)',
       }}
     >
-      <div className='bg-primary-200 pointer-events-none absolute top-0 right-0 h-full w-1/2' />
+      <div className='bg-primary-200 absolute top-0 right-0 h-full w-1/2' />
+
       <Image
         src={HeroImage}
         alt='hero'

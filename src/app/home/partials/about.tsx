@@ -20,9 +20,9 @@ const AboutMe = () => {
                 width={238}
                 height={178}
                 alt='about1'
-                style={{
-                  width: 'clamp(10.625rem, 19.071vw, 14.875rem)',
-                }}
+                // style={{
+                //   width: 'clamp(10.625rem, 19.071vw, 14.875rem)',
+                // }}
               />
               <Image
                 className='absolute bottom-[48%] left-1/2 -z-10 translate-x-[117%]'
@@ -30,9 +30,9 @@ const AboutMe = () => {
                 width={250}
                 height={187}
                 alt='about1'
-                style={{
-                  width: 'clamp(8.375rem, 20.032vw, 15.625rem)',
-                }}
+                // style={{
+                //   width: 'clamp(8.375rem, 20.032vw, 15.625rem)',
+                // }}
               />
               <Image
                 className='absolute top-[73%] left-1/2 -z-10 translate-x-[133%]'
@@ -110,9 +110,9 @@ const AboutMe = () => {
           width={132}
           height={100}
           alt='about1'
-          // style={{
-          //   width: 'clamp(8.25rem, 9.375vw, 7.3125rem)',
-          // }}
+          style={{
+            width: 'clamp(8.25rem, 9.375vw, 7.3125rem)',
+          }}
         />
       </div>
     </section>
