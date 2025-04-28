@@ -68,7 +68,7 @@ const Navbar = () => {
             />
           </SheetTrigger>
           <SheetContent>
-            <SheetHeader>
+            <SheetHeader className='hidden'>
               <SheetDescription className='sr-only'>Menu</SheetDescription>
             </SheetHeader>
 
