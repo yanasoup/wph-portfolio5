@@ -47,26 +47,10 @@ const AboutMe = () => {
             </div>
           </div>
 
-          <h2
-            className='text-neutral-25 mx-auto font-extrabold'
-            style={{
-              width: 'clamp(21.375rem, 69.87vw, 54.5rem)',
-              fontSize: 'clamp(2rem, 3.8461vw, 3rem)',
-              lineHeight: 'clamp(2.875rem, 4.8077vw, 3.75rem)',
-              marginTop: 'clamp(0.25rem, 0.3205vw, 0.25rem)',
-            }}
-          >
+          <h2 className='md:display-2xl-extrabold display-md-extrabold text-neutral-25 mx-auto mt-2'>
             CRAFTING SEAMLESS
           </h2>
-          <h2
-            className='text-neutral-25 mx-auto font-extrabold'
-            style={{
-              width: 'clamp(21.375rem, 69.87vw, 54.5rem)',
-              fontSize: 'clamp(2rem, 3.8461vw, 3rem)',
-              lineHeight: 'clamp(2.875rem, 4.8077vw, 3.75rem)',
-              marginTop: 'clamp(0.25rem, 0.3205vw, 0.25rem)',
-            }}
-          >
+          <h2 className='md:display-2xl-extrabold display-md-extrabold text-neutral-25 mx-auto mt-2'>
             <span className='text-primary-200'>HIGH-PERFORMANCE WEB</span>{' '}
             EXPERIENCES
           </h2>

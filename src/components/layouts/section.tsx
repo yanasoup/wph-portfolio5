@@ -8,6 +8,8 @@ type SectionProps = {
   subtitle: string;
   id?: string;
   className?: string;
+  minWidth?: string;
+  maxWidth?: string;
 };
 
 export const Section: React.FC<SectionProps> = ({
@@ -16,6 +18,8 @@ export const Section: React.FC<SectionProps> = ({
   subtitle,
   id,
   className,
+  minWidth = '18.25rem',
+  maxWidth = '100%',
 }) => {
   return (
     <div className={cn('custom-container py-10 md:py-20', className)} id={id}>
@@ -24,7 +28,12 @@ export const Section: React.FC<SectionProps> = ({
         <p className='text-md-medium md:text-lg-medium text-primary-200'>
           {title}
         </p>
-        <h2 className='md:display-2xl-extrabold text-neutral-25 display-md-extrabold'>
+        <h2
+          className='md:display-2xl-extrabold text-neutral-25 display-md-extrabold mx-auto'
+          style={{
+            width: `clamp(${minWidth}, 47.44vw, ${maxWidth})`,
+          }}
+        >
           {subtitle}
         </h2>
       </div>

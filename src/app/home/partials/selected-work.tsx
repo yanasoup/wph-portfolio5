@@ -12,7 +12,7 @@ const SelectedWork = () => {
 
   return (
     <Section title='PORTFOLIO' subtitle='SELECTED WORK' id='projects'>
-      <div className='mt-6 flex flex-wrap gap-8 md:mt-16 md:gap-12'>
+      <div className='mx-auto mt-6 flex flex-wrap gap-8 md:mt-16 md:gap-12'>
         {chunkedData.map((group, groupIndex) => (
           <div key={groupIndex} className='flex flex-wrap gap-8 md:gap-5'>
             {group.map((item, itemIndex) => (

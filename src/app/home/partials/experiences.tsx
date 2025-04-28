@@ -16,7 +16,7 @@ import heroImg from '../../../../public/images/hero1.png';
 
 const Experiences = () => {
   return (
-    <Section title='WORKING' subtitle='WHY CHOOSE ME?'>
+    <Section title='WORKING' subtitle='WHY CHOOSE ME?' minWidth='100%'>
       <div className='mt-6 flex flex-wrap md:mt-12 md:gap-20'>
         <div className='flex-1 basis-90'>
           <ExperienceCard title='WORKING WITH ME' icon={heroImg}>
@@ -78,7 +78,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       <Image
         src={icon}
         alt={title}
-        className='mt-6 size-15 rounded-full bg-neutral-950 md:mt-8 md:size-20'
+        className='mt-6 size-15 rounded-full bg-neutral-950 object-cover object-top md:mt-8 md:size-20'
       />
       <div className='w-full divide-y divide-neutral-800'>{children}</div>
     </div>

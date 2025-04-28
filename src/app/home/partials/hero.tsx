@@ -35,8 +35,8 @@ const Hero = () => {
         <h1
           className='display-lg-extrabold md:text-display-5xl mt-4 md:font-extrabold'
           style={{
-            fontSize: 'clamp(1.125rem, 6.41vw, 5rem)',
-            lineHeight: 'clamp(2rem, 6.41vw, 5rem)',
+            fontSize: 'clamp(2.25rem, 6.41vw, 5rem)',
+            lineHeight: 'clamp(3rem, 6.41vw, 6.25rem)',
           }}
         >
           BUILDING FAST & <span className='text-primary-200'>INTERACTIVE</span>{' '}
