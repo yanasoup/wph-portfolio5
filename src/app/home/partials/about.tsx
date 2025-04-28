@@ -35,14 +35,14 @@ const AboutMe = () => {
                 // }}
               />
               <Image
-                className='absolute top-[73%] left-1/2 -z-10 translate-x-[133%]'
+                className='absolute top-[73%] left-1/2 -z-10 translate-x-[115%]'
                 src='/images/image-about3.png'
                 width={117}
                 height={88}
                 alt='about1'
-                // style={{
-                //   width: 'clamp(8.25rem, 9.375vw, 7.3125rem)',
-                // }}
+                style={{
+                  width: 'clamp(8.25rem, 9.375vw, 7.3125rem)',
+                }}
               />
             </div>
           </div>
@@ -50,7 +50,7 @@ const AboutMe = () => {
           <h2 className='md:display-2xl-extrabold display-md-extrabold text-neutral-25 mx-auto mt-2'>
             CRAFTING SEAMLESS
           </h2>
-          <h2 className='md:display-2xl-extrabold display-md-extrabold text-neutral-25 mx-auto mt-2'>
+          <h2 className='md:display-2xl-extrabold display-md-extrabold text-neutral-25 mx-auto mt-2 md:w-218'>
             <span className='text-primary-200'>HIGH-PERFORMANCE WEB</span>{' '}
             EXPERIENCES
           </h2>
