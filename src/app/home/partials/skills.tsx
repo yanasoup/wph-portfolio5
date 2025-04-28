@@ -75,18 +75,8 @@ type SkillBarProps = {
 
 const SkillBar: React.FC<SkillBarProps> = ({ title, value }) => {
   return (
-    <div
-      className='flex items-center justify-center gap-4 md:gap-6'
-      // style={{
-      //   width: 'clamp(22.5rem, 48.23vw, 37.625rem)',
-      // }}
-    >
-      <div
-        className='w-full'
-        // style={{
-        //   width: 'clamp(18.875rem, 37.42vw, 29.1875rem)',
-        // }}
-      >
+    <div className='flex items-center justify-center gap-4 md:gap-6'>
+      <div className='relative w-full'>
         <div
           className='bg-primary-300 px-3.88 rounded-3.24 py-1.25 md:rounded-3xl md:px-6 md:py-2'
           style={{ width: `${value}%` }}
@@ -95,6 +85,7 @@ const SkillBar: React.FC<SkillBarProps> = ({ title, value }) => {
             {title}
           </p>
         </div>
+        <div className='absolute top-1/2 -z-10 h-0.25 w-full bg-neutral-800' />
       </div>
       <p className='text-sm-semibold md:text-xl-semibold text-white'>
         {value}%
