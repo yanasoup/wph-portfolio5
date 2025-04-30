@@ -17,7 +17,7 @@ const Testimonials = () => {
   const chunkedData = chunkArray(testimonialData, 2);
   return (
     <Section title='TESTIMONIALS' subtitle='PEOPLE SAYS ABOUT ME'>
-      <Carousel className='mt-6 md:mt-16'>
+      <Carousel className='mt-6 md:mt-16' orientation='horizontal'>
         <CarouselContent>
           {chunkedData.map((group, groupIndex) => (
             <CarouselItem key={groupIndex}>
