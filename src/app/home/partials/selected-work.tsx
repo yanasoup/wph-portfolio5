@@ -59,7 +59,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
       <Image
         src={image}
         alt={title}
-        className='rounded-2xl object-contain md:rounded-3xl'
+        className='rounded-2xl object-contain transition-transform delay-0 duration-500 ease-in-out hover:scale-105 hover:rotate-1 hover:cursor-pointer md:rounded-3xl'
       />
       <h4 className='text-neutral-25 md:display-xs-bold text-xl-bold mt-3 md:mt-4'>
         {title}
