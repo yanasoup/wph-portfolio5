@@ -2,6 +2,7 @@ import { Icon } from '@iconify/react';
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 
+import LazySection from '@/components/layouts/lazy-section';
 import { Section } from '@/components/layouts/section';
 import {
   Carousel,
@@ -16,22 +17,24 @@ import { chunkArray } from '@/lib/utils';
 const Testimonials = () => {
   const chunkedData = chunkArray(testimonialData, 2);
   return (
-    <Section title='TESTIMONIALS' subtitle='PEOPLE SAYS ABOUT ME'>
-      <Carousel className='mt-6 md:mt-16' orientation='horizontal'>
-        <CarouselContent>
-          {chunkedData.map((group, groupIndex) => (
-            <CarouselItem key={groupIndex}>
-              <div key={groupIndex} className='flex flex-wrap gap-4'>
-                {group.map((testi) => (
-                  <TestimonialCard key={testi.title} {...testi} />
-                ))}
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselNavigation />
-      </Carousel>
-    </Section>
+    <LazySection>
+      <Section title='TESTIMONIALS' subtitle='PEOPLE SAYS ABOUT ME'>
+        <Carousel className='mt-6 md:mt-16' orientation='horizontal'>
+          <CarouselContent>
+            {chunkedData.map((group, groupIndex) => (
+              <CarouselItem key={groupIndex}>
+                <div key={groupIndex} className='flex flex-wrap gap-4'>
+                  {group.map((testi) => (
+                    <TestimonialCard key={testi.title} {...testi} />
+                  ))}
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselNavigation />
+        </Carousel>
+      </Section>
+    </LazySection>
   );
 };
 

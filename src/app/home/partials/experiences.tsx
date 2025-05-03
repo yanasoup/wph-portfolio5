@@ -2,6 +2,7 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import LazySection from '@/components/layouts/lazy-section';
 import { Section } from '@/components/layouts/section';
 import { Button } from '@/components/ui/button';
 
@@ -16,42 +17,44 @@ import heroImg from '../../../../public/images/hero1.png';
 
 const Experiences = () => {
   return (
-    <Section title='WORKING' subtitle='WHY CHOOSE ME?' minWidth='100%'>
-      <div className='mt-6 flex flex-wrap md:mt-12 md:gap-20'>
-        <div className='flex-1 basis-90'>
-          <ExperienceCard title='WORKING WITH ME' icon={heroImg}>
-            {myExperiencesData.map((data) => (
-              <ExperienceItem
-                key={data.title}
-                {...data}
-                className='text-md-bold md:text-xl-bold text-neutral-25'
-              />
-            ))}
-          </ExperienceCard>
+    <LazySection>
+      <Section title='WORKING' subtitle='WHY CHOOSE ME?' minWidth='100%'>
+        <div className='mt-6 flex flex-wrap md:mt-12 md:gap-20'>
+          <div className='flex-1 basis-90'>
+            <ExperienceCard title='WORKING WITH ME' icon={heroImg}>
+              {myExperiencesData.map((data) => (
+                <ExperienceItem
+                  key={data.title}
+                  {...data}
+                  className='text-md-bold md:text-xl-bold text-neutral-25'
+                />
+              ))}
+            </ExperienceCard>
+          </div>
+          <div className='flex-1 basis-90'>
+            <ExperienceCard title='ANOTHER TALENT' icon={otherDev}>
+              {otherExperiencesData.map((data) => (
+                <ExperienceItem
+                  key={data.title}
+                  {...data}
+                  className='text-md-regular md:text-xl-regular text-neutral-400'
+                />
+              ))}
+            </ExperienceCard>
+          </div>
         </div>
-        <div className='flex-1 basis-90'>
-          <ExperienceCard title='ANOTHER TALENT' icon={otherDev}>
-            {otherExperiencesData.map((data) => (
-              <ExperienceItem
-                key={data.title}
-                {...data}
-                className='text-md-regular md:text-xl-regular text-neutral-400'
-              />
-            ))}
-          </ExperienceCard>
+        <div className='flex-center mt-10 md:mt-12'>
+          <Button asChild className='w-full md:w-fit'>
+            <Link
+              className='text-sm-bold md:text-md-bold text-neutral-950'
+              href='#contact'
+            >
+              HIRE ME
+            </Link>
+          </Button>
         </div>
-      </div>
-      <div className='flex-center mt-10 md:mt-12'>
-        <Button asChild className='w-full md:w-fit'>
-          <Link
-            className='text-sm-bold md:text-md-bold text-neutral-950'
-            href='#contact'
-          >
-            HIRE ME
-          </Link>
-        </Button>
-      </div>
-    </Section>
+      </Section>
+    </LazySection>
   );
 };
 

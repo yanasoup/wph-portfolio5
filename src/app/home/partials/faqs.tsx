@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 
+import LazySection from '@/components/layouts/lazy-section';
 import { Section } from '@/components/layouts/section';
 
 import { faqData } from '@/constants/faq-data';
@@ -9,20 +10,22 @@ import { chunkArray } from '@/lib/utils';
 const FAQS = () => {
   const chunkedFaqs = chunkArray(faqData, 2);
   return (
-    <Section title='FAQ' subtitle='FREQUENTLY ASKED QUESTIONS' id='faq'>
-      <div className='mt-6 md:mt-16 [&>div:last-child]:border-0 max-md:[&>div:last-child>div:last-child]:border-0'>
-        {chunkedFaqs.map((group, groupIndex) => (
-          <div
-            key={groupIndex}
-            className='flex flex-wrap gap-4 divide-neutral-800 border-neutral-800 pb-4 max-md:divide-y md:mt-10 md:gap-10 md:divide-x md:border-b md:pb-10'
-          >
-            {group.map((item, itemIndex) => (
-              <FaqItem key={itemIndex} {...item} />
-            ))}
-          </div>
-        ))}
-      </div>
-    </Section>
+    <LazySection>
+      <Section title='FAQ' subtitle='FREQUENTLY ASKED QUESTIONS' id='faq'>
+        <div className='mt-6 md:mt-16 [&>div:last-child]:border-0 max-md:[&>div:last-child>div:last-child]:border-0'>
+          {chunkedFaqs.map((group, groupIndex) => (
+            <div
+              key={groupIndex}
+              className='flex flex-wrap gap-4 divide-neutral-800 border-neutral-800 pb-4 max-md:divide-y md:mt-10 md:gap-10 md:divide-x md:border-b md:pb-10'
+            >
+              {group.map((item, itemIndex) => (
+                <FaqItem key={itemIndex} {...item} />
+              ))}
+            </div>
+          ))}
+        </div>
+      </Section>
+    </LazySection>
   );
 };
 

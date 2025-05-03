@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import { ClipLoader } from 'react-spinners';
 import { z } from 'zod';
 
+import LazySection from '@/components/layouts/lazy-section';
 import { Button } from '@/components/ui/button';
 import DecorationBox from '@/components/ui/decoration-box';
 import {
@@ -83,124 +84,126 @@ const ContactForm = () => {
   }
 
   return (
-    <section className='custom-container relative z-15 flex flex-wrap md:mt-20'>
-      <DecorationBox className='absolute top-0 left-0 z-10 h-[4.3rem] w-[6.45rem] -translate-y-[50%] rotate-180 md:h-[5.75rem] md:w-[8.625rem] md:-translate-y-[100%]' />
+    <LazySection>
+      <section className='custom-container relative z-15 flex flex-wrap md:mt-20'>
+        <DecorationBox className='absolute top-0 left-0 z-10 h-[4.3rem] w-[6.45rem] -translate-y-[50%] rotate-180 md:h-[5.75rem] md:w-[8.625rem] md:-translate-y-[100%]' />
 
-      <div className='flex-[1.8] basis-90 max-md:mb-10'>
-        <div
-          className='relative mx-auto'
-          style={{
-            width: 'clamp(21.75rem, 33.65vw, 26.25rem)',
-          }}
-        >
-          <Image
-            src={HeroImage}
-            alt='hero'
-            className='grayscale'
+        <div className='flex-[1.8] basis-90 max-md:mb-10'>
+          <div
+            className='relative mx-auto'
             style={{
               width: 'clamp(21.75rem, 33.65vw, 26.25rem)',
             }}
-          />
-          <div className='from-base-black absolute inset-0 bg-linear-to-t to-transparent' />
-          <div className='from-base-black absolute inset-x-0 bottom-0 h-[70%] bg-linear-to-t to-transparent' />
-
-          <div className='absolute bottom-0 left-1/2 z-60 -translate-x-1/2 translate-y-[22%] gap-4'>
-            <div className='flex-start gap-4 md:gap-6'>
-              {socialMediaData.map((icon) => (
-                <Link
-                  key={icon.alt}
-                  href={icon.href}
-                  className='bg-base-black flex-center size-16 rounded-full border border-neutral-800 p-2.5'
-                >
-                  <Image
-                    src={icon.src}
-                    alt={icon.alt}
-                    className='size-7 md:size-9.5'
-                  />
-                </Link>
-              ))}
-            </div>
-
-            <p className='text-md-bold text-base-white md:text-xl-bold mt-4 text-center'>
-              Yana Supriatna
-            </p>
-            <div className='flex-center flex gap-3'>
-              <p className='bg-primary-200 size-3 rounded-full'></p>
-              <p className='text-sm-bold md:text-md-semibold text-neutral-400'>
-                Available for Work
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='flex-[8.2] basis-90 max-md:px-4 max-md:pt-10'>
-        <div id='contact'>
-          <p className='text-md-medium md:text-lg-medium text-primary-200'>
-            CONTACT
-          </p>
-          <h2 className='md:display-2xl-extrabold text-neutral-25 display-md-extrabold'>
-            LET’S GET IN TOUCH
-          </h2>
-          <div className='mt-6 md:mt-12'>
-            <Form {...form}>
-              <form
-                className='mx-auto max-w-180 space-y-4 md:space-y-6'
-                onSubmit={form.handleSubmit(onSubmit)}
-              >
-                <FormField
-                  control={form.control}
-                  name='name'
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Name</FormLabel>
-                      <Input disabled={loading} {...field} />
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name='email'
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <Input disabled={loading} {...field} />
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name='message'
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <Textarea disabled={loading} {...field} />
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <Button
-                  disabled={loading}
-                  className='mt-4 w-full font-bold text-neutral-950 md:mt-6'
-                >
-                  {loading ? <ClipLoader size={20} /> : 'Send Message'}
-                </Button>
-              </form>
-            </Form>
-            <FormStatusDialog
-              open={showDialog}
-              variant={variant}
-              loading={loading}
-              onOpenChange={setShowDialog}
+          >
+            <Image
+              src={HeroImage}
+              alt='hero'
+              className='grayscale'
+              style={{
+                width: 'clamp(21.75rem, 33.65vw, 26.25rem)',
+              }}
             />
+            <div className='from-base-black absolute inset-0 bg-linear-to-t to-transparent' />
+            <div className='from-base-black absolute inset-x-0 bottom-0 h-[70%] bg-linear-to-t to-transparent' />
+
+            <div className='absolute bottom-0 left-1/2 z-60 -translate-x-1/2 translate-y-[22%] gap-4'>
+              <div className='flex-start gap-4 md:gap-6'>
+                {socialMediaData.map((icon) => (
+                  <Link
+                    key={icon.alt}
+                    href={icon.href}
+                    className='bg-base-black flex-center size-16 rounded-full border border-neutral-800 p-2.5'
+                  >
+                    <Image
+                      src={icon.src}
+                      alt={icon.alt}
+                      className='size-7 md:size-9.5'
+                    />
+                  </Link>
+                ))}
+              </div>
+
+              <p className='text-md-bold text-base-white md:text-xl-bold mt-4 text-center'>
+                Yana Supriatna
+              </p>
+              <div className='flex-center flex gap-3'>
+                <p className='bg-primary-200 size-3 rounded-full'></p>
+                <p className='text-sm-bold md:text-md-semibold text-neutral-400'>
+                  Available for Work
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+        <div className='flex-[8.2] basis-90 max-md:px-4 max-md:pt-10'>
+          <div id='contact'>
+            <p className='text-md-medium md:text-lg-medium text-primary-200'>
+              CONTACT
+            </p>
+            <h2 className='md:display-2xl-extrabold text-neutral-25 display-md-extrabold'>
+              LET’S GET IN TOUCH
+            </h2>
+            <div className='mt-6 md:mt-12'>
+              <Form {...form}>
+                <form
+                  className='mx-auto max-w-180 space-y-4 md:space-y-6'
+                  onSubmit={form.handleSubmit(onSubmit)}
+                >
+                  <FormField
+                    control={form.control}
+                    name='name'
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Name</FormLabel>
+                        <Input disabled={loading} {...field} />
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name='email'
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <Input disabled={loading} {...field} />
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name='message'
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Message</FormLabel>
+                        <Textarea disabled={loading} {...field} />
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <Button
+                    disabled={loading}
+                    className='mt-4 w-full font-bold text-neutral-950 md:mt-6'
+                  >
+                    {loading ? <ClipLoader size={20} /> : 'Send Message'}
+                  </Button>
+                </form>
+              </Form>
+              <FormStatusDialog
+                open={showDialog}
+                variant={variant}
+                loading={loading}
+                onOpenChange={setShowDialog}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </LazySection>
   );
 };
 

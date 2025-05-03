@@ -2,6 +2,7 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import LazySection from '@/components/layouts/lazy-section';
 import { Section } from '@/components/layouts/section';
 
 import { portfolioItemData } from '@/constants/selected-word-data';
@@ -11,20 +12,22 @@ const SelectedWork = () => {
   const chunkedData = chunkArray(portfolioItemData, 3);
 
   return (
-    <Section title='PORTFOLIO' subtitle='SELECTED WORK' id='projects'>
-      <div className='mx-auto mt-6 flex flex-wrap gap-8 md:mt-16 md:gap-12'>
-        {chunkedData.map((group, groupIndex) => (
-          <div
-            key={groupIndex}
-            className='flex flex-wrap gap-8 md:flex-1 md:gap-5'
-          >
-            {group.map((item, itemIndex) => (
-              <PortfolioItem key={itemIndex} {...item} />
-            ))}
-          </div>
-        ))}
-      </div>
-    </Section>
+    <LazySection>
+      <Section title='PORTFOLIO' subtitle='SELECTED WORK' id='projects'>
+        <div className='mx-auto mt-6 flex flex-wrap gap-8 md:mt-16 md:gap-12'>
+          {chunkedData.map((group, groupIndex) => (
+            <div
+              key={groupIndex}
+              className='flex flex-wrap gap-8 md:flex-1 md:gap-5'
+            >
+              {group.map((item, itemIndex) => (
+                <PortfolioItem key={itemIndex} {...item} />
+              ))}
+            </div>
+          ))}
+        </div>
+      </Section>
+    </LazySection>
   );
 };
 
