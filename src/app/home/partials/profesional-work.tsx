@@ -3,7 +3,6 @@ import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import { useMedia } from 'react-use';
 
-import LazySection from '@/components/layouts/lazy-section';
 import { Section } from '@/components/layouts/section';
 import DecorationBox from '@/components/ui/decoration-box';
 
@@ -14,21 +13,19 @@ const ProfesionalWork = () => {
   const isLargeIsh = useMedia('(min-width: 1024px', false);
 
   return (
-    <LazySection>
-      <Section
-        title='EXPERIENCE'
-        subtitle='PROFESIONAL WORK'
-        className='relative'
-      >
-        <DecorationBox className='absolute right-0 bottom-0 z-10 h-[4.3rem] w-[6.45rem] translate-y-[80%] -rotate-90 md:h-[5.75rem] md:w-[8.625rem]' />
-        <ProfesionalWorkCard>
-          {profesionalWorkData.map((work) => {
-            const atrr = { isLargeIsh: isLargeIsh, ...work };
-            return <WorkItem key={work.index} {...atrr} />;
-          })}
-        </ProfesionalWorkCard>
-      </Section>
-    </LazySection>
+    <Section
+      title='EXPERIENCE'
+      subtitle='PROFESIONAL WORK'
+      className='relative'
+    >
+      <DecorationBox className='absolute right-0 bottom-0 z-10 h-[4.3rem] w-[6.45rem] translate-y-[80%] -rotate-90 md:h-[5.75rem] md:w-[8.625rem]' />
+      <ProfesionalWorkCard>
+        {profesionalWorkData.map((work) => {
+          const atrr = { isLargeIsh: isLargeIsh, ...work };
+          return <WorkItem key={work.index} {...atrr} />;
+        })}
+      </ProfesionalWorkCard>
+    </Section>
   );
 };
 

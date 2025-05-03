@@ -99,10 +99,10 @@ const SkillBar: React.FC<SkillBarProps> = ({ title, value }) => {
 
   return (
     <div className='flex items-center justify-center gap-4 md:gap-6'>
-      <div className='relative h-16 w-full'>
+      <div className='relative h-10.5 w-full md:h-16'>
         <motion.div
           ref={ref}
-          className={`bg-primary-300 px-3.88 rounded-3.24 h-16 py-1.25 md:rounded-3xl`}
+          className={`bg-primary-300 px-3.88 h-full rounded-xl py-1.25 md:rounded-3xl`}
           style={{ width: `${value}%` }}
           initial={{
             width: 0,
