@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 
@@ -25,8 +26,11 @@ const HeroProfile = () => {
       <div className='from-base-black absolute inset-x-0 bottom-0 h-[80%] bg-linear-to-t to-transparent' />
 
       {/* client rating */}
-      <div
-        className='bg-base-black absolute bottom-1 left-1/2 z-10 h-34.5 w-full -translate-x-[50%] rounded-2xl border border-neutral-800 p-4 md:bottom-[9.6%] md:h-44.5 md:w-79 md:rounded-3xl md:p-5'
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: 'easeOut', delay: 2.3 }}
+        className='bg-base-black absolute bottom-1 left-1/2 z-10 h-34.5 w-full -translate-x-[50%] rounded-2xl border border-neutral-800 p-4 opacity-0 md:bottom-[9.6%] md:h-44.5 md:w-79 md:rounded-3xl md:p-5'
         style={{
           width: 'clamp(19.75rem,27.96vw,21.81rem',
         }}
@@ -62,7 +66,7 @@ const HeroProfile = () => {
         >
           Many Client Trust with me
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };
