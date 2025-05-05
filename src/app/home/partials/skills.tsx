@@ -68,7 +68,7 @@ const SkillsMarquee: React.FC<MarqueeProps> = ({
   return (
     <div className='relative flex items-center justify-start overflow-hidden md:justify-center'>
       <div
-        className='flex overflow-hidden md:w-131'
+        className='flex flex-1 overflow-hidden'
         style={{
           width: 'clamp(22.5rem, 41.99vw, 32.75rem)',
         }}
