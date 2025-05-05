@@ -1,6 +1,8 @@
 'use client';
+import { motion, useAnimation } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import { useMedia } from 'react-use';
 
 import LazySection from '@/components/layouts/lazy-section';
@@ -71,10 +73,10 @@ const WorkItem: React.FC<WorkItemProps> = ({
       {index % 2 !== 0 && isLargeIsh && (
         <>
           <WorkImageContainer />
-          <LineAndCircle index={index} />
+          <LineAndCircle index={index} isLargeIsh={isLargeIsh} />
         </>
       )}
-      {!isLargeIsh && <LineAndCircle index={index} />}
+      {!isLargeIsh && <LineAndCircle index={index} isLargeIsh={isLargeIsh} />}
 
       {/* right column */}
       <div className='bg-base-black rounded-2xl border border-neutral-800 p-4 md:rounded-3xl md:p-6'>
@@ -95,7 +97,7 @@ const WorkItem: React.FC<WorkItemProps> = ({
       </div>
       {index % 2 === 0 && isLargeIsh && (
         <>
-          <LineAndCircle index={index} />
+          <LineAndCircle index={index} isLargeIsh={isLargeIsh} />
           <WorkImageContainer />
         </>
       )}
@@ -118,23 +120,51 @@ const WorkImageContainer: React.FC<{ children?: React.ReactNode }> = ({
   );
 };
 
-const LineAndCircle: React.FC<{ index: number }> = ({ index }) => {
+const LineAndCircle: React.FC<{ index: number; isLargeIsh: boolean }> = ({
+  index,
+  isLargeIsh = false,
+}) => {
+  const { ref, inView } = useInView({ threshold: 1, triggerOnce: true });
+  const lineControls = useAnimation();
+  const lineControlsMd = useAnimation();
+
+  React.useEffect(() => {
+    if (inView) {
+      lineControls.start({
+        height: 'calc(100% - 1.5rem)',
+      });
+      lineControlsMd.start({
+        height: 'calc(100% - 3rem)',
+      });
+    }
+  }, [inView, lineControls, lineControlsMd]);
+
   return (
     <div
-      className={cn(
-        'group relative mb-0 md:mb-8 [&:nth-last-child(2)]:mb-0',
-        // target child
-        '[&:nth-last-child(2)>.line-decoration]:h-1/2',
-        '[&:nth-last-child(11)>.line-decoration]:top-1/2 [&:nth-last-child(11)>.line-decoration]:h-[calc(50%+2rem)]'
-      )}
+      ref={ref}
+      className={cn('group relative mb-0 [&:nth-last-child(2)]:mb-0')}
     >
       {/* line decoration */}
-      <div className='line-decoration absolute left-1/2 h-[calc(100%+1rem)] w-0.25 -translate-x-1/2 bg-neutral-800 group-first:top-1/2 md:h-[calc(100%+3rem)] lg:h-[calc(100%+2rem)]' />
+      {index !== 4 && (
+        <motion.div
+          initial={{ height: 0 }}
+          animate={isLargeIsh ? lineControlsMd : lineControls}
+          transition={{ duration: 2, ease: 'easeOut' }}
+          className={cn(
+            'line-decoration absolute top-[calc(50%+1.25rem)] left-1/2 w-0.25 -translate-x-1/2 bg-neutral-800 md:top-[calc(50%+1.2rem)] lg:top-[calc(50%+1.5rem)]'
+          )}
+        />
+      )}
 
       {/* index circle */}
-      <span className='flex-center bg-base-black text-primary-200 md:text-md-bold text-sm-bold absolute inset-x-0 top-1/2 aspect-square -translate-y-1/2 rounded-full border border-neutral-800'>
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease: 'easeOut' }}
+        className='flex-center text-primary-200 md:text-md-bold text-sm-bold bg-base-black absolute inset-x-0 top-1/2 aspect-square -translate-y-1/2 rounded-full border border-neutral-800'
+      >
         {index}
-      </span>
+      </motion.span>
     </div>
   );
 };
