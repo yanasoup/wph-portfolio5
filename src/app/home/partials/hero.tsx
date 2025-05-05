@@ -72,6 +72,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 3, ease: 'easeOut', delay: 2.5 }}
+          className='opacity-0'
         >
           <Button asChild className='mt-10 w-full md:mt-15 md:w-fit md:px-29'>
             <Link
