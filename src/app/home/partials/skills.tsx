@@ -7,11 +7,10 @@ import LazySection from '@/components/layouts/lazy-section';
 import Marquee from '@/components/ui/marquee';
 
 import { skillsData, skillProficiencies } from '@/constants/skills-data';
-import { chunkArray } from '@/lib/utils';
+import { chunkArray, cn } from '@/lib/utils';
 
 const Skiils = () => {
   const splitData = chunkArray(skillsData, 4);
-  console.log('splitData', splitData);
 
   return (
     <LazySection>
@@ -165,7 +164,10 @@ const SkillBar: React.FC<SkillBarProps> = ({ title, value }) => {
       <div className='relative h-10.5 w-full md:h-16'>
         <motion.div
           ref={ref}
-          className={`bg-primary-300 px-3.88 h-full rounded-xl py-1.25 md:rounded-3xl`}
+          className={cn(
+            'px-3.88 h-full rounded-xl py-1.25 md:rounded-3xl',
+            'bg-[repeating-linear-gradient(55deg,_#717680_0px,_#717680_1px,_#396600_1px,_#396600_20px)]'
+          )}
           style={{ width: `${value}%` }}
           initial={{
             width: 0,
