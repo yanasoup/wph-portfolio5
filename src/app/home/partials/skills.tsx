@@ -5,6 +5,12 @@ import { useInView } from 'react-intersection-observer';
 
 import LazySection from '@/components/layouts/lazy-section';
 import Marquee from '@/components/ui/marquee';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 import { skillsData, skillProficiencies } from '@/constants/skills-data';
 import { chunkArray, cn } from '@/lib/utils';
@@ -72,30 +78,37 @@ const SkillsMarquee: React.FC<MarqueeProps> = ({
           width: 'clamp(22.5rem, 41.99vw, 32.75rem)',
         }}
       >
-        <Marquee
-          reverse={reverse}
-          className='p-0 [--duration:10s] [--gap:1rem]'
-          pauseOnHover={pauseOnHover}
-          vertical={vertical}
-          repeat={repeat}
-        >
-          {items.map((data) => (
-            <div
-              key={data.title}
-              className='flex-center mx-auto size-12 rounded-full border border-neutral-800 p-3 md:size-16 [&>*]:h-9.5 [&>*]:w-auto'
-            >
-              <Image
-                key={data.title}
-                src={data.icon}
-                alt={data.title}
-                className='select-none'
-                style={{
-                  height: 'clamp(1.63rem, 2.8vw, 2.19rem)',
-                }}
-              />
-            </div>
-          ))}
-        </Marquee>
+        <TooltipProvider>
+          <Marquee
+            reverse={reverse}
+            className='p-0 [--duration:10s] [--gap:1rem]'
+            pauseOnHover={pauseOnHover}
+            vertical={vertical}
+            repeat={repeat}
+          >
+            {items.map((data) => (
+              <React.Fragment key={data.title}>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <div className='flex-center mx-auto size-12 cursor-pointer rounded-full border border-neutral-800 p-3 md:size-16 [&>*]:h-9.5 [&>*]:w-auto'>
+                      <Image
+                        src={data.icon}
+                        alt={data.title}
+                        className='select-none'
+                        style={{
+                          height: 'clamp(1.63rem, 2.8vw, 2.19rem)',
+                        }}
+                      />
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{data.title}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </React.Fragment>
+            ))}
+          </Marquee>
+        </TooltipProvider>
       </div>
       <div className='from-base-black absolute inset-y-0 left-0 w-[15%] bg-gradient-to-r to-transparent'></div>
       <div className='from-base-black absolute inset-y-0 right-0 w-[15%] bg-gradient-to-l to-transparent'></div>
@@ -165,8 +178,8 @@ const SkillBar: React.FC<SkillBarProps> = ({ title, value }) => {
         <motion.div
           ref={ref}
           className={cn(
-            'px-3.88 h-full rounded-xl py-1.25 md:rounded-3xl',
-            'bg-[repeating-linear-gradient(55deg,_#717680_0px,_#717680_1px,_#396600_1px,_#396600_20px)]'
+            'px-3.88 bg-primary-300 h-full rounded-xl py-1.25 md:rounded-3xl',
+            'bg-[repeating-linear-gradient(60deg,_#717680_0px,_#717680_1px,_#396600_1px,_#396600_20px)]'
           )}
           style={{ width: `${value}%` }}
           initial={{

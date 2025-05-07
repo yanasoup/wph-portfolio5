@@ -1,3 +1,4 @@
+'use client';
 import emailjs from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Image from 'next/image';

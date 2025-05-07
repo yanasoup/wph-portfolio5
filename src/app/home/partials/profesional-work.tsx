@@ -132,9 +132,11 @@ const LineAndCircle: React.FC<{ index: number; isLargeIsh: boolean }> = ({
     if (inView) {
       lineControls.start({
         height: 'calc(100% - 1.5rem)',
+        backgroundColor: '#252b37',
       });
       lineControlsMd.start({
         height: 'calc(100% - 3rem)',
+        backgroundColor: '#252b37',
       });
     }
   }, [inView, lineControls, lineControlsMd]);
@@ -147,7 +149,7 @@ const LineAndCircle: React.FC<{ index: number; isLargeIsh: boolean }> = ({
       {/* line decoration */}
       {index !== 4 && (
         <motion.div
-          initial={{ height: 0 }}
+          initial={{ height: 0, backgroundColor: '#92ff04' }}
           animate={isLargeIsh ? lineControlsMd : lineControls}
           transition={{ duration: 2, ease: 'easeOut' }}
           className={cn(
@@ -158,9 +160,9 @@ const LineAndCircle: React.FC<{ index: number; isLargeIsh: boolean }> = ({
 
       {/* index circle */}
       <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, ease: 'easeOut' }}
+        initial={{ opacity: 0, borderColor: '#92ff04' }}
+        animate={{ opacity: 1, borderColor: '#252b37' }}
+        transition={{ duration: 2, ease: 'easeOut' }}
         className='flex-center text-primary-200 md:text-md-bold text-sm-bold bg-base-black absolute inset-x-0 top-1/2 aspect-square -translate-y-1/2 rounded-full border border-neutral-800'
       >
         {index}

@@ -44,7 +44,7 @@ const Hero = () => {
         <motion.h1
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 1 }}
           className='display-lg-extrabold md:text-display-5xl mt-4 md:font-extrabold'
           style={{
             fontSize: 'clamp(2.25rem, 6.41vw, 5rem)',
@@ -57,7 +57,7 @@ const Hero = () => {
         <motion.p
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: 'easeOut', delay: 1 }}
+          transition={{ duration: 1, ease: 'easeOut', delay: 1.5 }}
           className='text-lg-medium md:text-xl-medium mt-4 text-neutral-400'
           style={{
             width: 'clamp(20.00rem, 47.83vw, 37.31rem)',
@@ -71,7 +71,7 @@ const Hero = () => {
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 3, ease: 'easeOut', delay: 2.5 }}
+          transition={{ duration: 3, ease: 'easeOut', delay: 3.5 }}
           className='opacity-0'
         >
           <Button asChild className='mt-10 w-full md:mt-15 md:w-fit md:px-29'>
