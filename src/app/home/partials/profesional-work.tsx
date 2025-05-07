@@ -151,7 +151,7 @@ const LineAndCircle: React.FC<{ index: number; isLargeIsh: boolean }> = ({
         <motion.div
           initial={{ height: 0, backgroundColor: '#92ff04' }}
           animate={isLargeIsh ? lineControlsMd : lineControls}
-          transition={{ duration: 2, ease: 'easeOut' }}
+          transition={{ duration: 6, ease: 'easeOut' }}
           className={cn(
             'line-decoration absolute top-[calc(50%+1.25rem)] left-1/2 w-0.25 -translate-x-1/2 bg-neutral-800 md:top-[calc(50%+1.2rem)] lg:top-[calc(50%+1.5rem)]'
           )}
