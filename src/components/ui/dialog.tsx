@@ -55,7 +55,7 @@ function DialogContent({
       <DialogPrimitive.Content
         data-slot='dialog-content'
         className={cn(
-          'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-139.5 translate-x-[-50%] translate-y-[-50%] rounded-lg px-5 shadow-lg duration-200 outline-none',
+          'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-119.75 translate-x-[-50%] translate-y-[-50%] rounded-lg px-5 shadow-lg duration-200 outline-none',
           className
         )}
         {...props}
@@ -79,7 +79,7 @@ function DialogBody({ className, ...props }: React.ComponentProps<'div'>) {
     <div
       data-slot='dialog-body'
       className={cn(
-        'z-50 rounded-2xl border border-neutral-800 bg-neutral-950 px-8 pt-20 pb-6 md:pb-8',
+        'z-50 rounded-2xl border border-neutral-800 bg-neutral-950',
         className
       )}
       {...props}
@@ -112,6 +112,10 @@ function DialogTitle({
         className
       )}
       {...props}
+      style={{
+        fontSize: 'clamp(1.13rem, 1.6vw, 1.25rem)',
+        lineHeight: 'clamp(2rem, 2.72vw, 2.13rem)',
+      }}
     />
   );
 }
@@ -128,6 +132,10 @@ function DialogDescription({
         className
       )}
       {...props}
+      style={{
+        fontSize: 'clamp(0.88rem, 1.28vw, 1rem)',
+        lineHeight: 'clamp(1.75rem, 2.4vw, 1.88rem)',
+      }}
     />
   );
 }
