@@ -63,7 +63,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   description,
 }) => {
   return (
-    <motiodiv className='flex flex-1 basis-90 flex-col gap-3 md:gap-6'>
+    <div className='flex flex-1 basis-90 flex-col gap-3 md:gap-6'>
       <p className='text-md-semibold md:text-xl-semibold text-neutral-400'>
         {index}
       </p>
@@ -75,6 +75,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <p className='text-md-regular md:text-xl-regular line-clamp-2 text-neutral-400'>
         {description}
       </p>
-    </motiodiv>
+    </div>
   );
 };

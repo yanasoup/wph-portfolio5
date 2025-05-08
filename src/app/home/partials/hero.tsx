@@ -6,8 +6,6 @@ import { Button } from '@/components/ui/button';
 import DecorationBox from '@/components/ui/decoration-box';
 import HeroProfile from '@/components/ui/hero-profile';
 
-import { cn } from '@/lib/utils';
-
 const Hero = () => {
   return (
     <section
@@ -107,7 +105,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-const DecorationLine: React.FC<{ className?: string }> = ({ className }) => {
-  return <div className={cn('', className)} />;
-};
