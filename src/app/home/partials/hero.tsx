@@ -9,7 +9,7 @@ import HeroProfile from '@/components/ui/hero-profile';
 const Hero = () => {
   return (
     <section
-      className='custom-container border-0.25 relative flex flex-wrap overflow-hidden border-b border-neutral-800 lg:h-218'
+      className='custom-container border-0.25 relative flex flex-wrap overflow-hidden border-neutral-800 md:border-b lg:h-218'
       id='home'
     >
       <DecorationBox className='absolute bottom-[16%] left-0 z-5 h-[4.3rem] w-[6.45rem] md:bottom-0 md:h-[5.75rem] md:w-[8.625rem]' />

@@ -7,7 +7,7 @@ import { serviceData } from '@/constants/services-data';
 const Services = () => {
   return (
     <LazySection>
-      <div className='custom-container py-10 md:py-30'>
+      <div className='custom-container py-20 md:py-30'>
         <div className='flex flex-wrap items-center justify-between gap-4 lg:gap-46'>
           <div className='flex-[5.1] basis-80'>
             <p className='md:text-lg-medium text-md-medium text-primary-200'>
