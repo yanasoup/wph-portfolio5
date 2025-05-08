@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import React from 'react';
 
 import LazySection from '@/components/layouts/lazy-section';
@@ -8,14 +7,7 @@ import { serviceData } from '@/constants/services-data';
 const Services = () => {
   return (
     <LazySection>
-      <motion.section
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.8,
-        }}
-        className='custom-container py-10 md:py-30'
-      >
+      <div className='custom-container py-10 md:py-30'>
         <div className='flex flex-wrap items-center justify-between gap-4 lg:gap-46'>
           <div className='flex-[5.1] basis-80'>
             <p className='md:text-lg-medium text-md-medium text-primary-200'>
@@ -42,7 +34,7 @@ const Services = () => {
             ))}
           </ServiceCards>
         </div>
-      </motion.section>
+      </div>
     </LazySection>
   );
 };
@@ -71,7 +63,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   description,
 }) => {
   return (
-    <div className='flex flex-1 basis-90 flex-col gap-3 md:gap-6'>
+    <motiodiv className='flex flex-1 basis-90 flex-col gap-3 md:gap-6'>
       <p className='text-md-semibold md:text-xl-semibold text-neutral-400'>
         {index}
       </p>
@@ -83,6 +75,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <p className='text-md-regular md:text-xl-regular line-clamp-2 text-neutral-400'>
         {description}
       </p>
-    </div>
+    </motiodiv>
   );
 };

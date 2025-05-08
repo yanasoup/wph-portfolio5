@@ -9,9 +9,14 @@ import { cn } from '@/lib/utils';
 const LazySection = ({
   children,
   className,
+  variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  },
 }: {
   children: React.ReactNode;
   className?: string;
+  variants?: any;
 }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -30,10 +35,7 @@ const LazySection = ({
       ref={ref}
       initial='hidden'
       animate={controls}
-      variants={{
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0 },
-      }}
+      variants={variants}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={cn(className)}
     >

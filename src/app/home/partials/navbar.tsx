@@ -35,7 +35,7 @@ const Navbar = () => {
         background,
         backdropFilter: backdropBlur,
       }}
-      className='fixed z-30 w-full'
+      className='fixed z-30 w-full border-b border-neutral-800'
     >
       <div className='custom-container flex-between h-20'>
         <div className='flex-start relative flex gap-2'>

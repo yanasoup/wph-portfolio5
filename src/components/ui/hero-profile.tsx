@@ -8,7 +8,7 @@ import HeroImage from '../../../public/images/hero1.png';
 const HeroProfile = () => {
   return (
     <div
-      className='relative mx-auto overflow-hidden'
+      className='relative z-10 mx-auto overflow-hidden'
       style={{
         width: 'clamp(20.00rem, 52.88vw, 41.25rem)',
         height: 'clamp(29.13rem, 70.63vw, 55.06rem)',

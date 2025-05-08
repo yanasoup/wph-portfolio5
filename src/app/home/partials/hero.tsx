@@ -6,13 +6,27 @@ import { Button } from '@/components/ui/button';
 import DecorationBox from '@/components/ui/decoration-box';
 import HeroProfile from '@/components/ui/hero-profile';
 
+import { cn } from '@/lib/utils';
+
 const Hero = () => {
   return (
     <section
-      className='custom-container relative flex flex-wrap lg:h-218'
+      className='custom-container border-0.25 relative flex flex-wrap overflow-hidden border-b border-neutral-800 lg:h-218'
       id='home'
     >
-      <DecorationBox className='absolute bottom-[16%] left-0 z-10 h-[4.3rem] w-[6.45rem] md:bottom-0 md:h-[5.75rem] md:w-[8.625rem]' />
+      <DecorationBox className='absolute bottom-[16%] left-0 z-5 h-[4.3rem] w-[6.45rem] md:bottom-0 md:h-[5.75rem] md:w-[8.625rem]' />
+      <div
+        className='absolute inset-y-0 w-0.25 bg-neutral-800'
+        style={{
+          left: 'clamp(11.31rem, 19.8vw, 15.44rem)',
+        }}
+      />
+      <div
+        className='absolute inset-y-0 z-5 w-0.25 bg-neutral-800'
+        style={{
+          left: 'clamp(17.5rem, 46.35vw, 36.19rem)',
+        }}
+      />
       {/* kiri */}
       <div
         className='z-20 flex-[5.9] basis-110 md:p-0'
@@ -93,3 +107,7 @@ const Hero = () => {
 };
 
 export default Hero;
+
+const DecorationLine: React.FC<{ className?: string }> = ({ className }) => {
+  return <div className={cn('', className)} />;
+};
