@@ -38,7 +38,7 @@ const WorkWithMe = () => {
                 <Experience.Item
                   key={data.title}
                   {...data}
-                  className='text-md-bold md:text-xl-bold text-neutral-25'
+                  className='text-md-regular md:text-xl-regular text-neutral-400'
                 />
               ))}
             </Experience.Group>

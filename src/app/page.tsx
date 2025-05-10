@@ -1,5 +1,4 @@
 'use client';
-// import ScrollTriggered from './demo/ScrollTriggered';
 import AboutMe from './home/partials/about';
 import ContactForm from './home/partials/contact-form';
 import FAQS from './home/partials/faqs';
