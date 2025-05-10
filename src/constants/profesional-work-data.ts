@@ -4,10 +4,10 @@ import logoTrello from '../../public/icons/icon-trello.svg';
 import logoUpwork from '../../public/icons/icon-upwork.svg';
 import logoZapier from '../../public/icons/icon-zapier.svg';
 import logoZoom from '../../public/icons/icon-zoom.svg';
-import work1Src from '../../public/images/project1.jpg';
-import work2Src from '../../public/images/project2.jpg';
-import work3Src from '../../public/images/project3.jpg';
-import work4Src from '../../public/images/project4.jpg';
+import work1Src from '../../public/images/project1.png';
+import work2Src from '../../public/images/project2.png';
+import work3Src from '../../public/images/project3.png';
+import work4Src from '../../public/images/project4.png';
 
 type WorkItem = {
   workImage: StaticImageData;

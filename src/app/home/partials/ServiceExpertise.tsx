@@ -5,13 +5,7 @@ import LazySection from '@/components/layouts/lazy-section';
 
 import { serviceData } from '@/constants/services-data';
 
-const serviceVariants: Variants = {
-  inView: {
-    transition: { staggerChildren: 0.4 },
-  },
-};
-
-const Services = () => {
+const ServiceExpertise = () => {
   return (
     <LazySection>
       <div className='custom-container py-20 md:py-30'>
@@ -34,28 +28,43 @@ const Services = () => {
             that align with industry trends and user expectations.
           </p>
         </div>
-        <div className='mt-6 flex flex-wrap md:mt-16'>
-          <ServiceCards>
+        <Service>
+          <Service.Group>
             {serviceData.map((data) => (
-              <ServiceCard key={data.index} {...data} />
+              <Service.Item key={data.index} {...data} />
             ))}
-          </ServiceCards>
-        </div>
+          </Service.Group>
+        </Service>
       </div>
     </LazySection>
   );
 };
 
-export default Services;
+export default ServiceExpertise;
 
-type ServiceCardsProps = {
+const serviceVariants: Variants = {
+  inView: {
+    transition: {
+      staggerChildren: 0.4,
+    },
+  },
+};
+
+type ServiceProps = {
   children: React.ReactNode;
 };
 
-const ServiceCards: React.FC<ServiceCardsProps> = ({ children }) => {
+type ServiceSubComponents = {
+  Group: typeof ServiceGroup;
+  Item: typeof ServiceGroup.Item;
+};
+
+const Service: React.FC<ServiceProps> & ServiceSubComponents = ({
+  children,
+}) => {
   return (
     <motion.div
-      className='flex flex-wrap gap-6 md:gap-10'
+      className='mt-6 flex flex-wrap md:mt-16'
       variants={serviceVariants}
       initial='outOfView'
       whileInView='inView'
@@ -66,21 +75,71 @@ const ServiceCards: React.FC<ServiceCardsProps> = ({ children }) => {
   );
 };
 
-type ServiceCardProps = {
+const serviceGroupVariants: Variants = {
+  inView: {
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.2,
+    },
+  },
+  outOfView: {},
+};
+type ServiceGroupProps = {
+  children: React.ReactNode;
+};
+
+type ServiceGroupSubComponents = {
+  Item: typeof ServiceItem;
+};
+
+const ServiceGroup: React.FC<ServiceGroupProps> & ServiceGroupSubComponents = ({
+  children,
+}) => {
+  return (
+    <motion.div
+      className='flex flex-wrap gap-6 md:gap-10'
+      variants={serviceGroupVariants}
+      initial='outOfView'
+      whileInView='inView'
+      viewport={{ once: false, amount: 0.35 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+type ServiceItemProps = {
   index: string;
   icon: React.ReactNode;
   title: string;
   description: string;
 };
 
-const ServiceCard: React.FC<ServiceCardProps> = ({
+const serviceItemVariants: Variants = {
+  inView: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  outOfView: {
+    opacity: 0,
+    x: -50,
+  },
+};
+
+const ServiceItem: React.FC<ServiceItemProps> = ({
   index,
   icon,
   title,
   description,
 }) => {
   return (
-    <div className='flex flex-1 basis-90 flex-col gap-3 md:gap-6'>
+    <motion.div
+      variants={serviceItemVariants}
+      className='flex flex-1 basis-90 flex-col gap-3 md:gap-6'
+    >
       <p className='text-md-semibold md:text-xl-semibold text-neutral-400'>
         {index}
       </p>
@@ -92,6 +151,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <p className='text-md-regular md:text-xl-regular line-clamp-2 text-neutral-400'>
         {description}
       </p>
-    </div>
+    </motion.div>
   );
 };
+
+Service.Group = ServiceGroup;
+ServiceGroup.Item = ServiceItem;
+Service.Item = ServiceGroup.Item;

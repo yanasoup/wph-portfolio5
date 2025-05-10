@@ -21,7 +21,9 @@ const HeroProfile = () => {
         alt='hero'
         className='mx-auto mix-blend-luminosity grayscale'
       />
-      <div className='bg-primary-200 absolute inset-y-0 top-0 right-0 w-1/2 mix-blend-color' />
+      {/* <div className='from-base-black absolute inset-y-0 top-0 right-0 w-1/2 bg-linear-to-l to-transparent' /> */}
+      <div className='bg-primary-200 absolute inset-y-0 top-0 right-0 w-1/2 overflow-hidden mix-blend-color' />
+
       <div className='from-base-black absolute inset-0 bg-linear-to-t to-transparent' />
       <div className='from-base-black absolute inset-x-0 bottom-0 h-[80%] bg-linear-to-t to-transparent' />
 

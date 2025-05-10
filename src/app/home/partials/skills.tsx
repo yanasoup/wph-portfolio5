@@ -81,7 +81,7 @@ const SkillsMarquee: React.FC<MarqueeProps> = ({
         <TooltipProvider>
           <Marquee
             reverse={reverse}
-            className='p-0 [--duration:10s] [--gap:1rem]'
+            className='p-0 [--duration:20s] [--gap:1rem]'
             pauseOnHover={pauseOnHover}
             vertical={vertical}
             repeat={repeat}

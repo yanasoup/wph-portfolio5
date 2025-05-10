@@ -1,11 +1,11 @@
 import { StaticImageData } from 'next/image';
 
-import work1Src from '../../public/images/project1.jpg';
-import work2Src from '../../public/images/project2.jpg';
-import work3Src from '../../public/images/project3.jpg';
-import work4Src from '../../public/images/project4.jpg';
-import work5Src from '../../public/images/project5.jpg';
-import work6Src from '../../public/images/project6.jpg';
+import work1Src from '../../public/images/project1.png';
+import work2Src from '../../public/images/project2.png';
+import work3Src from '../../public/images/project3.png';
+import work4Src from '../../public/images/project4.png';
+import work5Src from '../../public/images/project5.png';
+import work6Src from '../../public/images/project6.png';
 
 type PortfolioItem = {
   image: StaticImageData;

@@ -48,6 +48,7 @@ export default {
       animation: {
         marquee: 'marquee var(--duration) linear infinite',
         'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+        'spin-slow': 'spin-cone 4s linear infinite',
       },
       keyframes: {
         marquee: {
@@ -57,6 +58,13 @@ export default {
         'marquee-vertical': {
           from: { transform: 'translateY(0)' },
           to: { transform: 'translateY(calc(-100% - var(--gap)))' },
+        },
+        'spin-cone': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        'auto-rotate': {
+          to: { 'var(--angle)': '360deg' },
         },
       },
       spacing: {

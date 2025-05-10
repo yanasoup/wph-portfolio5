@@ -79,7 +79,7 @@ const WorkItem: React.FC<WorkItemProps> = ({
       {!isLargeIsh && <LineAndCircle index={index} isLargeIsh={isLargeIsh} />}
 
       {/* right column */}
-      <div className='bg-base-black rounded-2xl border border-neutral-800 p-4 md:rounded-3xl md:p-6'>
+      <div className='bg-base-black hover:border-primary-200 rounded-2xl border border-neutral-800 p-4 md:rounded-3xl md:p-6'>
         <div className='flex flex-wrap items-start justify-between'>
           <div className='basis-68'>
             <p className='text-sm-regular md:text-lg-medium text-neutral-400'>

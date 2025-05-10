@@ -47,14 +47,19 @@ const Navbar = () => {
         <nav className='hidden lg:block'>
           <ul className='flex-start gap-8'>
             {navigationData.map((data) => (
-              <li key={data.label}>
+              <motion.li
+                key={data.label}
+                initial={{ y: -5, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, ease: 'easeOut', delay: 4 }}
+              >
                 <Link
                   className='text-md-regular text-base-white hover:text-primary-200 p-2'
                   href={data.href}
                 >
                   {data.label}
                 </Link>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </nav>
@@ -82,7 +87,7 @@ const Navbar = () => {
                 </p>
               </div>
 
-              <nav className='mt-4'>
+              <motion.nav className='mt-4'>
                 <ul className='flex flex-col gap-4'>
                   {navigationData.map((data) => (
                     <li key={data.label}>
@@ -97,7 +102,7 @@ const Navbar = () => {
                     </li>
                   ))}
                 </ul>
-              </nav>
+              </motion.nav>
             </div>
           </SheetContent>
         </Sheet>

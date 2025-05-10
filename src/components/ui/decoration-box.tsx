@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 
 import { cn } from '@/lib/utils';
@@ -25,5 +26,19 @@ const TransparentDecorationBox = () => {
 };
 
 const GreenDecorationBox = () => {
-  return <div className='bg-primary-400 size-[2.15rem] md:size-[2.875rem]' />;
+  return (
+    <motion.div
+      initial={{
+        x: -150,
+        rotate: 0,
+      }}
+      animate={{ x: 0, rotate: 360 }}
+      transition={{
+        type: 'spring',
+        duration: 1.5,
+        delay: 2.5,
+      }}
+      className='bg-primary-400 size-[2.15rem] md:size-[2.875rem]'
+    />
+  );
 };

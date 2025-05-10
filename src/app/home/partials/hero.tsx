@@ -84,9 +84,12 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 3, ease: 'easeOut', delay: 3.5 }}
-          className='opacity-0'
+          className='hover:animate-spin-slow from-primary-100 to-primary-200 bg-conic to-50%'
         >
-          <Button asChild className='mt-10 w-full md:mt-15 md:w-fit md:px-29'>
+          <Button
+            asChild
+            className='mt-10 w-full border-2 border-transparent md:mt-15 md:w-fit'
+          >
             <Link
               className='text-sm-bold md:text-md-bold text-neutral-950'
               href='#contact'
