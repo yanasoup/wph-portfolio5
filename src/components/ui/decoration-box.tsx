@@ -31,8 +31,9 @@ const GreenDecorationBox = () => {
       initial={{
         x: -150,
         rotate: 0,
+        opacity: 0,
       }}
-      animate={{ x: 0, rotate: 360 }}
+      animate={{ x: 0, rotate: 360, opacity: 1 }}
       transition={{
         type: 'spring',
         duration: 1.5,
