@@ -264,7 +264,7 @@ img {
   -webkit-user-select: none; /* For Safari */
 }
 
-@media (min-width: 1248px) {
+@media (min-width: 1548px) {
   body::after,
   body::before {
     position: fixed;
