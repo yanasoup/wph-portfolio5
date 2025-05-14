@@ -13,6 +13,7 @@ import {
   SheetDescription,
 } from '@/components/ui/sheet';
 
+import { heroData } from '@/constants/hero-data';
 import { navigationData } from '@/constants/navigation-data';
 
 import burgerMenu from '../../../../public/icons/menu-04.svg';
@@ -41,7 +42,7 @@ const Navbar = () => {
         <div className='flex-start relative flex gap-2'>
           <div className='bg-base-white inset-x-0 h-0.25 w-10'></div>
           <p className='text-primary-200 text-md-bold md:text-xl-bold'>
-            <Link href='#home'>Yana Supriatna</Link>
+            <Link href='#home'>{heroData.name}</Link>
           </p>
         </div>
         <nav className='hidden lg:block'>
@@ -82,7 +83,7 @@ const Navbar = () => {
                 <div className='bg-base-white inset-x-0 h-0.25 w-10'></div>
                 <p className='text-primary-200 text-md-bold'>
                   <SheetClose asChild>
-                    <Link href='#home'>Yana Supriatna</Link>
+                    <Link href='#home'>{heroData.name}</Link>
                   </SheetClose>
                 </p>
               </div>

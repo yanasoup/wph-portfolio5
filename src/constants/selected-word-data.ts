@@ -20,36 +20,41 @@ export const portfolioItemData: PortfolioItem[] = [
     title: 'Dashboard SaaS Task Management',
     description:
       'Lorem ipsum dolor sit amet consectetur. Aenean sed commodo aenean nunc lobortis.',
+    url: 'https://yanasoup-lapakpedia.vercel.app',
   },
   {
     image: work2Src,
     title: 'Dashboard SaaS Task Management',
     description:
       'Lorem ipsum dolor sit amet consectetur. Aenean sed commodo aenean nunc lobortis.',
-    url: 'https://yanasoup-lapakpedia.vercel.app',
+    url: 'https://yanasoup-todo-app.vercel.app',
   },
   {
     image: work3Src,
     title: 'Dashboard SaaS Task Management',
     description:
       'Lorem ipsum dolor sit amet consectetur. Aenean sed commodo aenean nunc lobortis.',
+    url: 'https://yanasoup-nextjs-food-app-demo.vercel.app/',
   },
   {
     image: work4Src,
     title: 'Dashboard SaaS Task Management',
     description:
       'Lorem ipsum dolor sit amet consectetur. Aenean sed commodo aenean nunc lobortis.',
+    url: 'https://samojafarm-yanasoup.web.app',
   },
   {
     image: work5Src,
     title: 'Dashboard SaaS Task Management',
     description:
       'Lorem ipsum dolor sit amet consectetur. Aenean sed commodo aenean nunc lobortis.',
+    url: 'https://yanasoup-nextjs-food-app-demo.vercel.app/',
   },
   {
     image: work6Src,
     title: 'Dashboard SaaS Task Management',
     description:
       'Lorem ipsum dolor sit amet consectetur. Aenean sed commodo aenean nunc lobortis.',
+    url: 'https://yanasoup-todo-app.vercel.app',
   },
 ];

@@ -14,7 +14,7 @@ import {
 import { cn } from '@/lib/utils';
 
 import otherDev from '../../../../public/icons/icon-anonymous.svg';
-import heroImg from '../../../../public/images/hero1.png';
+import heroImg from '../../../../public/images/hero.png';
 
 const WorkWithMe = () => {
   return (

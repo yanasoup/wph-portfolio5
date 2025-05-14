@@ -22,9 +22,10 @@ import FormStatusDialog from '@/components/ui/form-status-dialog';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
+import { heroData } from '@/constants/hero-data';
 import { socialMediaData } from '@/constants/social-media-data';
 
-import HeroImage from '../../../../public/images/hero1.png';
+import HeroImage from '../../../../public/images/hero.png';
 
 const contactSchema = z.object({
   name: z
@@ -101,7 +102,8 @@ const ContactForm = () => {
               alt='hero'
               className='grayscale'
               style={{
-                width: 'clamp(21.75rem, 33.65vw, 26.25rem)',
+                // width: 'clamp(21.75rem, 33.65vw, 26.25rem)',
+                height: 'clamp(29.06rem, 44.98vw, 35.06rem)',
               }}
             />
             <div className='from-base-black absolute inset-0 bg-linear-to-t to-transparent' />
@@ -125,7 +127,7 @@ const ContactForm = () => {
               </div>
 
               <p className='text-md-bold text-base-white md:text-xl-bold mt-4 text-center'>
-                Yana Supriatna
+                {heroData.name}
               </p>
               <div className='flex-center flex gap-3'>
                 <p className='bg-primary-200 size-3 rounded-full'></p>

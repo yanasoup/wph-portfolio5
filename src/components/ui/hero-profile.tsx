@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 
-import HeroImage from '../../../public/images/hero1.png';
+import HeroImage from '../../../public/images/hero.png';
 
 const HeroProfile = () => {
   return (
@@ -19,7 +19,7 @@ const HeroProfile = () => {
       <Image
         src={HeroImage}
         alt='hero'
-        className='mx-auto mix-blend-luminosity grayscale'
+        className='mx-auto pr-5 mix-blend-luminosity grayscale md:pr-10'
       />
       {/* <div className='from-base-black absolute inset-y-0 top-0 right-0 w-1/2 bg-linear-to-l to-transparent' /> */}
       <div className='bg-primary-200 absolute inset-y-0 top-0 right-0 w-1/2 overflow-hidden mix-blend-color' />
