@@ -45,7 +45,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({
   return (
     <div className='group relative flex-1 basis-80 cursor-pointer'>
       {url && (
-        <div className='bg-neutral-25 visit-link flex-center absolute top-[52%] left-1/2 z-30 size-20 translate-x-[38%] rounded-full p-2 transition-all duration-300 ease-in-out md:size-0 md:opacity-0 md:group-hover:size-25 md:group-hover:opacity-100'>
+        <div className='bg-neutral-25 visit-link flex-center absolute top-[52%] left-1/2 z-20 size-20 translate-x-[38%] rounded-full p-2 transition-all duration-300 ease-in-out md:size-0 md:opacity-0 md:group-hover:size-25 md:group-hover:opacity-100'>
           <Link
             href={url}
             target='_blank'
