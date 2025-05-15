@@ -1,3 +1,3 @@
 export const heroData = {
-  name: 'Edwin Anderson',
+  name: 'Yana Supriatna',
 };
